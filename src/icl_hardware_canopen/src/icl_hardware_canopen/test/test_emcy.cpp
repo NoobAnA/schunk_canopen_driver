@@ -20,7 +20,7 @@
  *
  */
 //----------------------------------------------------------------------
-
+#define BOOST_TEST_MAIN
 #include <icl_hardware_can/tCanDeviceDummy.h>
 
 #include <icl_hardware_canopen/CanOpenController.h>

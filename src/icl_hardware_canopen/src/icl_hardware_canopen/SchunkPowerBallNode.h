@@ -54,7 +54,7 @@ public:
   /*!
    * \brief This factor will be used to convert RAD numbers into encoder ticks
    */
-  static const double RAD_TO_STEPS_FACTOR = 57295.7795131;
+  static constexpr  double RAD_TO_STEPS_FACTOR = 57295.7795131;
 
   SchunkPowerBallNode(const uint8_t node_id, const icl_hardware::canopen_schunk::CanDevPtr& can_device, HeartBeatMonitor::Ptr heartbeat_monitor);
 

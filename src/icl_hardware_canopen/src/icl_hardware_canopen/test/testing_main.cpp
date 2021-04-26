@@ -22,7 +22,7 @@
 //----------------------------------------------------------------------
 
 #define BOOST_TEST_MAIN
-#include <boost/test/unit_test.hpp>
+//#include <boost/test/unit_test.hpp>
 
 // So far this is a dummy file. Boost tests for the different modules are
 // stored in separate files.
