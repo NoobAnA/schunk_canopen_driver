@@ -4,10 +4,12 @@
 
 ### 初始准备
 在windows下使用schunk提供的官方文档与软件将机械臂切换为Canopen模式：
+
 	1. 使用canu2292a.inf安装驱动
 	2. 将电脑与机械臂通过esd CAN-USB适配器连接
 	3. 执行SMPT_ResetToCANopen.exe
 	4. 重启机械臂
+
 ### 参考文档地址
 [schunk_canopen_driver](https://github.com/fzi-forschungszentrum-informatik/schunk_canopen_driver)
 
@@ -65,19 +67,21 @@
 
 > make[2]: Entering directory '/usr/src/linux-headers-5.4.0-72-generic' mkdir: cannot create directory ‘.tmp_7162’: Permission denied
 
-​	1. 改变*fzi_icl_can/install_pcan_module.sh*中驱动版本与内核版本对应，参考[peak官网](https://www.peak-system.com/fileadmin/media/linux/index.htm)，测试版本8.9.3可用
+1. 改变*fzi_icl_can/install_pcan_module.sh*中驱动版本与内核版本对应，参考[peak官网](https://www.peak-system.com/fileadmin/media/linux/index.htm)，测试版本8.9.3可用（*gcc version 7.5.0*）
 
- 2. 不是用原本rosrun命令运行，直接在文件路径下运行
-
-    ```bash
+2. 不使用原本rosrun命令运行，直接在文件路径下运行
+	```bash
     ./install_pcan_module.sh
-    ```
+   ```
 
-    
+
 
 ### 安装*libpcan*
 
 [libpcan](http://wiki.ros.org/libpcan)
+
+将[cob_extern](https://github.com/ipa320/cob_extern)中libpcan文件夹移动到*~/workspace/src*使用*catkin_make_isolated*编译
+
 
 To activate the driver you have to restart the system or if you want to avoid that manual load the driver with:
 
@@ -95,6 +99,12 @@ To activate the driver you have to restart the system or if you want to avoid th
   ```bash
   ls -l /dev/pcan*
   ```
+### 安装*popt*
+
+```bash
+ sudo  apt-get install libpopt-dev
+```
+
 
 
 

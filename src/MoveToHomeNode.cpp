@@ -157,6 +157,11 @@ int main(int argc, char** argv)
     ROS_INFO_STREAM ("Enabled nodes from chain " << chain_handles[i]->getName());
     std::vector<DS301Node::Ptr> nodes = chain_handles[i]->getNodes();
     std::vector<float> targets (nodes.size(), 0.0);
+    /*
+    targets[2]=0.5;
+    targets[1]=1.5;
+    targets[0]=1.5;
+    */
 
     chain_handles[i]->setTarget(targets);
   }
